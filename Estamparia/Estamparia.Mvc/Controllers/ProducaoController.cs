@@ -1,14 +1,6 @@
 ﻿using Estamparia.Aplication.Interfaces.IRepositorys;
-using Estamparia.Aplication.Interfaces.IRepositorys.IBaseRepositorys;
 using Estamparia.Aplication.Models;
-using Estamparia.Aplication.Models.BaseModels;
-using Estamparia.Domain.Repository.BaseRepositorys;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Estamparia.Mvc.Controllers
 {
@@ -38,7 +30,7 @@ namespace Estamparia.Mvc.Controllers
         public ActionResult Create(Producao producao)
         {
             repository.Create(producao);
-            return View();
+            return RedirectToAction("List");
         }
 
         [HttpGet]

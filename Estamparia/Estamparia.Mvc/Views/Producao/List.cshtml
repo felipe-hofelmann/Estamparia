@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Estamparia.Aplication.Models.Producao>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>List</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraInicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoraFim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantidadeHora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MediaFinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraFim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantidadeHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MediaFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

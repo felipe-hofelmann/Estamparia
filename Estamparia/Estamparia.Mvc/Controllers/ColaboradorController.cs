@@ -40,7 +40,7 @@ namespace Estamparia.Mvc.Controllers
         public ActionResult Create(Colaborador colaborador)
         {
             repository.Create(colaborador);
-            return View();
+            return RedirectToAction("List");
         }
 
         [HttpGet]
@@ -67,15 +67,8 @@ namespace Estamparia.Mvc.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Delete(Colaborador colaborador)
         {
-            try
-            {
-                repository.Delete(colaborador.Id);
-                return RedirectToAction("List");
-            }
-            catch
-            {
-                return View();
-            }
+            repository.Delete(colaborador.Id);
+            return RedirectToAction("List");
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Estamparia.Mvc.Controllers
         public ActionResult Create(MaquinaCarrossel maquinaCarrossel)
         {
             repository.Create(maquinaCarrossel);
-            return View();
+            return RedirectToAction("List");
         }
 
         [HttpGet]
@@ -65,15 +65,8 @@ namespace Estamparia.Mvc.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Delete(MaquinaCarrossel maquinaCarrossel)
         {
-            try
-            {
-                repository.Delete(maquinaCarrossel.Id);
-                return RedirectToAction("List");
-            }
-            catch
-            {
-                return View();
-            }
+            repository.Delete(maquinaCarrossel.Id);
+            return RedirectToAction("List");
         }
     }
 }

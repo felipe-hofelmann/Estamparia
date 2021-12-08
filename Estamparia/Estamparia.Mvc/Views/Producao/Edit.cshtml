@@ -8,33 +8,35 @@
 
 <h4>Producao</h4>
 <hr />
+@using (Html.BeginForm())
+{
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HoraInicio" class="control-label"></label>
-                <input asp-for="HoraInicio" class="form-control" />
+               @Html.EditorFor(model => model.HoraInicio, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="HoraInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HoraFim" class="control-label"></label>
-                <input asp-for="HoraFim" class="form-control" />
+                @Html.EditorFor(model => model.HoraFim, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="HoraFim" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="QuantidadeHora" class="control-label"></label>
-                <input asp-for="QuantidadeHora" class="form-control" />
+                @Html.EditorFor(model => model.QuantidadeHora, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="QuantidadeHora" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MediaFinal" class="control-label"></label>
-                <input asp-for="MediaFinal" class="form-control" />
+                @Html.EditorFor(model => model.MediaFinal, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="MediaFinal" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,7 +45,7 @@
         </form>
     </div>
 </div>
-
+}
 <div>
     @Html.ActionLink("Back to List", "List")
 </div>

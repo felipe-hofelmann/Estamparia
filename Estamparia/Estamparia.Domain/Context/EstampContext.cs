@@ -10,7 +10,7 @@ namespace Estamparia.Domain.Context
         public DbSet<MaquinaCarrossel> Maquinas { get; set; }
         public DbSet<Producao> Producoes { get; set; }
 
-        public EstampContext() : base(@"Data Source=DESKTOP-NGKOVQ9\SQLEXPRESS;Initial Catalog=EstampariaMvc;Integrated Security=True")
+        public EstampContext() : base(@"Data Source=LAPTOP-0HMNEP5V\SQLEXPRESS;Initial Catalog=Estamparia;Persist Security Info=True;User ID=sa;Password=sa123")
         {
 
         }

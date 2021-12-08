@@ -13,7 +13,7 @@ namespace Estamparia.Domain.Repository.BaseRepositorys
         {
             using (var context = new EstampContext())
             {
-                context.Entry<T>(model);
+                context.Set<T>().Add(model);
                 context.SaveChanges();
             }
         }

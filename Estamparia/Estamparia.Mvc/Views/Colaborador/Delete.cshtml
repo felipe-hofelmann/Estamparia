@@ -60,9 +60,10 @@
             @Html.DisplayFor(model => model.Id)
         </dd>
     </dl>
-    
+    @using (Html.BeginForm()) {
     <form asp-action="Delete">
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         @Html.ActionLink("Back to List", "List")
     </form>
+    }
 </div>

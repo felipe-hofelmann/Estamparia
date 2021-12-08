@@ -8,43 +8,45 @@
 
 <h4>Colaborador</h4>
 <hr />
+@using (Html.BeginForm())
+{
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label">Nome</label>
-                <input asp-for="Nome" class="form-control" />
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sobrenome" class="control-label">Sobrenome</label>
-                <input asp-for="Sobrenome" class="form-control" />
+                @Html.EditorFor(model => model.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Sobrenome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Idade" class="control-label">Idade</label>
-                <input asp-for="Idade" class="form-control" />
+               @Html.EditorFor(model => model.Idade, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Idade" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sexo" class="control-label">Sexo</label>
-                <input asp-for="Sexo" class="form-control" />
+                @Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Sexo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataAdimissao" class="control-label">Data de Adimissão</label>
-                <input asp-for="DataAdimissao" class="form-control" />
+                @Html.EditorFor(model => model.DataAdimissao, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="DataAdimissao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataDemissao" class="control-label">Data de Demissao</label>
-                <input asp-for="DataDemissao" class="form-control" />
+                @Html.EditorFor(model => model.DataDemissao, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="DataDemissao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Funcao" class="control-label">Função</label>
-                <input asp-for="Funcao" class="form-control" />
+                @Html.EditorFor(model => model.Funcao, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Funcao" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -53,7 +55,7 @@
         </form>
     </div>
 </div>
-
+}
 <div>
     @Html.ActionLink("Back to List", "List")
 </div>

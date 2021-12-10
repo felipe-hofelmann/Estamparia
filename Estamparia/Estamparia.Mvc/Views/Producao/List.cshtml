@@ -4,14 +4,17 @@
     ViewData["Title"] = "List";
 }
 
-<h1>List</h1>
+<h1>Lista</h1>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar", "Create")
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Date)
             </th>
@@ -27,17 +30,25 @@
             <th>
                 @Html.DisplayNameFor(model => model.MediaFinal)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
+             <th>
+                @Html.DisplayNameFor(model => model.QuantidadePecas)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorUnitario)
+            </th>
+            <th>
+                <h6><b>Valor Total</b></h6>
+            </th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Date)
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date.Date)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HoraInicio)
@@ -52,12 +63,17 @@
                 @Html.DisplayFor(modelItem => item.MediaFinal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
+                @Html.DisplayFor(modelItem => item.QuantidadePecas)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.DisplayFor(modelItem => item.ValorUnitario)
+            </td>
+            <td>
+                @Html.ValueForModel((item.ValorUnitario * Convert.ToDecimal(item.QuantidadePecas)).ToString())
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.Id  }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) 
             </td>
         </tr>
 }

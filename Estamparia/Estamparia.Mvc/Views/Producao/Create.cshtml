@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Cadastrar</h1>
 
-<h4>Producao</h4>
+<h4>Produção</h4>
 <hr />
 @using (Html.BeginForm())
 {
@@ -16,7 +16,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label">Data</label>
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Date.Date, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -30,7 +30,7 @@
                 <span asp-validation-for="HoraFim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="QuantidadeHora" class="control-label">Quantidae de peças por Hora</label>
+                <label asp-for="QuantidadeHora" class="control-label">Quantidade de peças por Hora</label>
                 @Html.EditorFor(model => model.QuantidadeHora, new { htmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="QuantidadeHora" class="text-danger"></span>
             </div>
@@ -40,14 +40,24 @@
                 <span asp-validation-for="MediaFinal" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="QuantidadePecas" class="control-label">Quantidade Final de Peças</label>
+                @Html.EditorFor(model => model.QuantidadePecas, new { htmlAttributes = new { @class = "form-control" } })
+                <span asp-validation-for="QuantidadePecas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorUnitario" class="control-label">Valor Unitario da Peça</label>
+                @Html.EditorFor(model => model.ValorUnitario, new { htmlAttributes = new { @class = "form-control" } })
+                <span asp-validation-for="ValorUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 }
 <div>
-    @Html.ActionLink("Back to List", "List")
+    @Html.ActionLink("Voltar a Lista", "List")
 </div>
 
 @section Scripts {

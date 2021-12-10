@@ -11,6 +11,8 @@ namespace Estamparia.Aplication.Models
         public string HoraFim { get; set; }
         public int QuantidadeHora { get; set; }
         public float MediaFinal { get; set; }
+        public int QuantidadePecas { get; set; }
+        public decimal ValorUnitario { get; set; }
         public List<Colaborador> Colaborador { get; set; }
         public MaquinaCarrossel Maquina { get; set; }
     }

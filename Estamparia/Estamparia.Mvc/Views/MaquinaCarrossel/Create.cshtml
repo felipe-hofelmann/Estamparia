@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Cadastrar</h1>
 
-<h4>MaquinaCarrossel</h4>
+<h4>Maquina Carrossel</h4>
 <hr />
 @using (Html.BeginForm())
 {
@@ -31,13 +31,13 @@
                     <span asp-validation-for="Marca" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
                 </div>
             </form>
         </div>
     </div>
 }
     <div>
-        @Html.ActionLink("Back to List", "List")
+        @Html.ActionLink("Voltar a Lista", "List")
     </div>
 
